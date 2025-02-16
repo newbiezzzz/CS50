@@ -1,0 +1,2 @@
+1. Characterize by the average value of average energy, valence and danceability.
+2. Prompt the user to choose the aura variables such as tempo, duration_ms and loudness and calculate the variables average.

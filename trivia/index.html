@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            function multipleChoice(event, num) {
+                let button = event.target;
+
+                if (num == 1) {
+                    button.style.backgroundColor = 'Green';
+                    // Searches the first feedback class and make the class display = 'Correct!'
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                } else {
+                    button.style.backgroundColor = 'Red';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Incorrect!';
+                }
+            }
+
+            function freeResponse(event) {
+                // Always will be button, because there is only button there that trigger this function
+                let button = event.target
+                // Searches the first input in the parent tag <div>
+                let input = button.parentElement.querySelector('input');
+
+                // === means hard check, must be a string
+                // == will have the same effect in this case
+                if (input.value === 'Huskar') {
+                    input.style.backgroundColor = 'Green';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                } else {
+                    input.style.backgroundColor = 'Red';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                }
+
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>In "The Internation 2024", which DOTA 2 team wins the grand final?</h3>
+                <div>
+                    <button onclick="multipleChoice(event, 1)">Team Liquid</button>
+                    <button onclick="multipleChoice(event, 0)">Nigma Galaxy</button>
+                    <button onclick="multipleChoice(event, 0)">T1</button>
+                    <button onclick="multipleChoice(event, 0)">Sentinels</button>
+                    <!-- div text: class feedback -->
+                    <h4 class="feedback"> </h4>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>In the game "DOTA 2", which hero only has health points and no mana points?</h3>
+                <div>
+                    <input type="text"></input>
+                    <button onclick="freeResponse(event)">Check Answer</button>
+                    <h4 class="feedback"> </h4>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Stocks</th>
+                <th>Shares</th>
+                <th>Current price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+                <tr>
+                    <td>{{ stock.symbol }}</td>
+                    <td>{{ stock.shares }}</td>
+                    <td>{{ usd(stock.price) }}</td>
+                    <td>{{ usd(stock.total) }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Cash</th>
+                <td>{{ usd(cash) }}</td>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>TOTAL</th>
+                <td>{{ usd(total) }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

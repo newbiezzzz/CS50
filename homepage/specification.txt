@@ -1,0 +1,22 @@
+HTML tags
+1. <div>
+2. <nav>
+3. <ul>
+4. <li>
+5. <a>
+6. <canvas>
+7. <script>
+8. <img>
+9. <h1>
+10. <h3>
+
+CSS properties
+1. display
+2. align-items
+3. position
+4. padding
+5. z-index
+
+How I chose to use Javascript and Bootstrap:
+- I chose Javascript to have an snowing effect from top to bottom of the viewport.
+- For Bootstrap, I included carousel slide and cards to display information.

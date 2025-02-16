@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Symbol</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in trans %}
+                <tr>
+                    <td>{{ t.status }}</td>
+                    <td>{{ t.symbol }}</td>
+                    <td>{{ usd(t.price) }}</td>
+                    <td>{{ t.shares }}</td>
+                    <td>{{ t.timestamp }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
